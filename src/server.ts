@@ -2,6 +2,7 @@ import express from "express";
 import http from "http"
 import helmet from "helmet"
 import cors from "cors"
+import revenueRouter from "./routers/revenue.router";
 
 const router = express()
 
@@ -16,6 +17,9 @@ const startServer =  () => {
 
     router.use(express.urlencoded({ extended: true }))
     router.use(express.json())
+
+    /** Routes */
+    router.use("/api",revenueRouter)
 
     /** CORS setup*/
     router.use(helmet())
