@@ -4,6 +4,7 @@ import helmet from "helmet"
 import cors from "cors"
 import revenueRouter from "./routers/revenue.router";
 import invoiceRouter from "./routers/invoice.router";
+import customerRouter from "./routers/customer.router";
 
 const router = express()
 
@@ -22,6 +23,7 @@ const startServer =  () => {
     /** Routes */
     router.use("/api",revenueRouter)
     router.use("/api", invoiceRouter)
+    router.use("/api",customerRouter)
 
     /** CORS setup*/
     router.use(helmet())

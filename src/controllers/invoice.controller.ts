@@ -1,6 +1,5 @@
 import {Request, Response} from "express";
 import {getAllInvoices} from "../services/invoice.service";
-import {Prisma} from "@prisma/client";
 
 export const getInvoiceController = async (req: Request, res: Response) => {
     try {
